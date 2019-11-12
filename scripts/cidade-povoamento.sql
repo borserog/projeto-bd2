@@ -82,4 +82,3 @@ Insert into cidade (idCidade, nome, uf) values (81,'Goianésia', 'GO');
 Insert into cidade (idCidade, nome, uf) values (82,'Goiânia', 'GO');
 Insert into cidade (idCidade, nome, uf) values (83,'Goianira', 'GO');
 Insert into cidade (idCidade, nome, uf) values (84,'Goiás', 'GO');
-
