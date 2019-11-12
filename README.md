@@ -18,5 +18,5 @@
 
 ## TASKS
 
-* Povoar listagem de infração do código nacional de trânsito
+* Povoar listagem de infração retirando dados do código nacional de trânsito
 
