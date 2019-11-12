@@ -9,9 +9,3 @@ INSERT INTO marca (nome, origem) values ('Fiat', 'Itália');
 INSERT INTO marca (nome, origem) values ('Nissan', 'Japão');
 INSERT INTO marca (nome, origem) values ('Hyundai', 'Coréia do Sul');
 INSERT INTO marca (nome, origem) values ('Renault', 'França');
-
-
-
-
-
-
