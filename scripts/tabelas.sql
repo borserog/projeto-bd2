@@ -22,15 +22,35 @@ CREATE TABLE categoria_cnh
     PRIMARY KEY (idCategoriaCNH)
 );
 
+CREATE TABLE condutor
+(
+	idCadastro SERIAL PRIMARY KEY,
+	cpf char(11) NOT NULL,
+	nome varchar(50) NOT NULL,
+	dataNasc date NOT NULL,
+	-- idCategoriaCNH int NOT NULL,
+	endereco varchar(50) NOT NULL, 
+	bairro varchar(30) NOT NULL,
+	-- idCidade int NOT NULL,
+	situacaoCNH char(1) NOT NULL,
+	--CONSTRAINT FK_categoria_cnh FOREIGN KEY (idCategoriaCNH)
+		--REFERENCES categoria_cnh (idCategoriaCNH) MATCH SIMPLE,
+	--CONSTRAINT FK_cidade KEY (idCidade)
+		--REFERENCES cidade (idCidade) MATCH SIMPLE,
+	-- TODO constraint para cpf
+	CONSTRAINT cpf_valido CHECK (cpf ~*'[0-9]'),
+	CONSTRAINT situacao_valida CHECK (situacaoCNH ~* '[r||s||R||S]')
+);
+
 CREATE TABLE tipo
 (
-    idTipo SERIAL,
+    idTipo SERIAL PRIMARY KEY,
     descricao varchar(30)
 );
 
 CREATE TABLE marca
 (
-  idMarca SERIAL,
+  idMarca SERIAL PRIMARY KEY,
   nome varchar(40) NOT NULL,
   origem varchar(40) NOT NULL
 );
