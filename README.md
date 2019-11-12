@@ -10,7 +10,7 @@
 7. modelo 
 8. infracao __OK__ (falta popular)
 9. especie __OK__
-10. categoria_veiculo
+10. categoria_veiculo __OK__
 11. veiculo
 12. multa
 13. licenciamento
