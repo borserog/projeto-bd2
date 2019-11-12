@@ -63,9 +63,14 @@ CREATE TABLE especie
 	descricao VARCHAR(30) NOT NULL
 );
 
-/* 
-    TABELA categoria_veiculo - Não entendi a parte da FK que recebe da tabela especie (???)
-*/
+CREATE TABLE categoria_veiculo
+(
+	idCategoria SERIAL PRIMARY KEY,
+	descricao VARCHAR(30) NOT NULL,
+	idEspecie INT NOT NULL,
+	CONSTRAINT FK_categoriaVeiculo FOREIGN KEY (idEspecie)
+		REFERENCES especie
+);
 
 CREATE TABLE infracao
 (
