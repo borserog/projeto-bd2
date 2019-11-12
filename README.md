@@ -1,6 +1,6 @@
 # TODO
 
-# ORDEM DE CRIAÇÃO TABELAS
+## ORDEM DE CRIAÇÃO TABELAS
 1. estado __OK__
 2. cidade __OK__
 3. categoria_cnh __OK__
@@ -16,4 +16,7 @@
 13. licenciamento
 14. transferencia
 
+## TASKS
+
+* Povoar listagem de infração do código nacional de trânsito
 
