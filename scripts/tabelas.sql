@@ -24,13 +24,13 @@ CREATE TABLE categoria_cnh
 
 CREATE TABLE tipo
 (
-    idTipo SERIAL,
+    idTipo SERIAL PRIMARY KEY,
     descricao varchar(30)
 );
 
 CREATE TABLE marca
 (
-  idMarca SERIAL,
+  idMarca SERIAL PRIMARY KEY,
   nome varchar(40) NOT NULL,
   origem varchar(40) NOT NULL
 );
