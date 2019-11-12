@@ -142,7 +142,7 @@ INSERT INTO categoria_cnh (idCategoriaCNH, descricao) values ('AE', '-- sem desc
 
 /*************************************************************************************************
 *
-*  #3 condutor
+*  #4 condutor
 *
 ************************************************************************************************/
 
@@ -549,7 +549,48 @@ insert into condutor (cpf, nome, dataNasc, idCategoriaCNH, endereco, bairro, idC
 
 /*************************************************************************************************
 *
-*  #4 condutor
+*  #5 marca
+*
+************************************************************************************************/
+
+INSERT INTO marca (nome, origem) values ('Honda', 'Japão');
+INSERT INTO marca (nome, origem) values ('Toyota', 'Japão');
+INSERT INTO marca (nome, origem) values ('Chevrolet', 'EUA');
+INSERT INTO marca (nome, origem) values ('BMW', 'Alemanha');
+INSERT INTO marca (nome, origem) values ('Ford', 'EUA');
+INSERT INTO marca (nome, origem) values ('Audi', 'Alemanha');
+INSERT INTO marca (nome, origem) values ('Volkswagen', 'Alemanha');
+INSERT INTO marca (nome, origem) values ('Fiat', 'Itália');
+INSERT INTO marca (nome, origem) values ('Nissan', 'Japão');
+INSERT INTO marca (nome, origem) values ('Hyundai', 'Coréia do Sul');
+INSERT INTO marca (nome, origem) values ('Renault', 'França');
+
+/*************************************************************************************************
+*
+*  #6 tipo
+*
+************************************************************************************************/
+
+INSERT INTO tipo (descricao) values ('motocicleta');
+INSERT INTO tipo (descricao) values ('motoneta');
+INSERT INTO tipo (descricao) values ('triciclo');
+INSERT INTO tipo (descricao) values ('quadriciclo');
+INSERT INTO tipo (descricao) values ('automóvel');
+INSERT INTO tipo (descricao) values ('microônibus');
+INSERT INTO tipo (descricao) values ('ônibus');
+INSERT INTO tipo (descricao) values ('reboque');
+INSERT INTO tipo (descricao) values ('charrete');
+INSERT INTO tipo (descricao) values ('caminhonete');
+INSERT INTO tipo (descricao) values ('caminhão');
+INSERT INTO tipo (descricao) values ('carroça');
+INSERT INTO tipo (descricao) values ('trator de rodas');
+INSERT INTO tipo (descricao) values ('trator de esteira');
+INSERT INTO tipo (descricao) values ('trator misto');
+INSERT INTO tipo (descricao) values ('furgão');
+
+/*************************************************************************************************
+*
+*  #7 modelo
 *
 ************************************************************************************************/
 
