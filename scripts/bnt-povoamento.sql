@@ -594,3 +594,27 @@ INSERT INTO tipo (descricao) values ('furgão');
 *
 ************************************************************************************************/
 
+INSERT INTO modelo (denominacao, idMarca, idTipo) VALUES ('Civic', 1, 5);
+INSERT INTO modelo (denominacao, idMarca, idTipo) VALUES ('Clarity', 1, 5);
+INSERT INTO modelo (denominacao, idMarca, idTipo) VALUES ('CB Hornet', 1 , 1);
+INSERT INTO modelo (denominacao, idMarca, idTipo) VALUES ('Activa 5G',1 , 1);
+INSERT INTO modelo (denominacao, idMarca, idTipo) VALUES ('Shine SP',1 , 1);
+INSERT INTO modelo (denominacao, idMarca, idTipo) VALUES ('Fit',1 , 5);
+INSERT INTO modelo (denominacao, idMarca, idTipo) VALUES ('M340i Sedan', 4, 5);
+INSERT INTO modelo (denominacao, idMarca, idTipo) VALUES ('M550i xDrive Sedan', 4, 5);
+INSERT INTO modelo (denominacao, idMarca, idTipo) VALUES ('M760i xDrive Sedan', 4, 5);
+INSERT INTO modelo (denominacao, idMarca, idTipo) VALUES ('M850i xDrive Coupe', 4, 5);
+INSERT INTO modelo (denominacao, idMarca, idTipo) VALUES ('Jetta', 7, 5);
+INSERT INTO modelo (denominacao, idMarca, idTipo) VALUES ('Passat', 7, 5);
+INSERT INTO modelo (denominacao, idMarca, idTipo) VALUES ('Golf', 7, 5);
+INSERT INTO modelo (denominacao, idMarca, idTipo) VALUES ('Gol', 7, 5);
+INSERT INTO modelo (denominacao, idMarca, idTipo) VALUES ('Amarok', 7, 10);
+INSERT INTO modelo (denominacao, idMarca, idTipo) VALUES ('Duster', 11, 5);
+INSERT INTO modelo (denominacao, idMarca, idTipo) VALUES ('Clio', 11, 5);
+INSERT INTO modelo (denominacao, idMarca, idTipo) VALUES ('Sandero', 11, 5);
+INSERT INTO modelo (denominacao, idMarca, idTipo) VALUES ('i30', 10, 5);
+INSERT INTO modelo (denominacao, idMarca, idTipo) VALUES ('HB20', 10, 5);
+INSERT INTO modelo (denominacao, idMarca, idTipo) VALUES ('A3', 6, 5);
+INSERT INTO modelo (denominacao, idMarca, idTipo) VALUES ('Palio', 2, 10);
+INSERT INTO modelo (denominacao, idMarca, idTipo) VALUES ('Stilo', 8, 5);
+INSERT INTO modelo (denominacao, idMarca, idTipo) VALUES ('Uno', 8, 5);

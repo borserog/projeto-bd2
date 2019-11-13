@@ -44,9 +44,6 @@ CREATE TABLE condutor
 	CONSTRAINT situacao_valida CHECK (situacaoCNH ~* '[r||s||R||S]')
 );
 
-delete from condutor;
-
-
 CREATE TABLE marca
 (
   idMarca SERIAL PRIMARY KEY,
@@ -60,7 +57,17 @@ CREATE TABLE tipo
     descricao varchar(30)
 );
 
--- TODO MODELO
+CREATE TABLE modelo
+(
+    idModelo SERIAL PRIMARY KEY,
+    denominacao varchar(40),
+    idMarca int NOT NULL,
+    idTipo int NOT NULL,
+    CONSTRAINT FK_marca FOREIGN KEY (idMarca)
+        REFERENCES marca MATCH SIMPLE,
+    CONSTRAINT FK_tipo FOREIGN KEY (idTipo)
+        REFERENCES tipo MATCH SIMPLE
+);
 
 CREATE TABLE infracao
 (
