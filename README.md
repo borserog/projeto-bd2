@@ -19,4 +19,5 @@
 ## TASKS
 
 * Povoar listagem de infração retirando dados do código nacional de trânsito
+* Trigger para o renavam. Create Sequence.
 
