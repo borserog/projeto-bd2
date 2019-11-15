@@ -72,7 +72,7 @@ CREATE TABLE modelo
 CREATE TABLE infracao
 (
 	idInfracao SERIAL PRIMARY KEY,
-	descricao VARCHAR(50) NOT NULL,
+	descricao VARCHAR(100) NOT NULL,
 	valor numeric(5,2) NOT NULL,
 	pontos INT NOT NULL
 );
