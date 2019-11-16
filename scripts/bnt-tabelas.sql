@@ -140,8 +140,30 @@ CREATE TABLE multa
     CHECK (pago IN ('S', 'N'))
 );
 
--- TODO LICENCIAMENTO
+CREATE TABLE licenciamento
+(
+    ano int NOT NULL,
+    renavam char(13) NOT NULL,
+    dataVenc date,
+    pago char(1) NOT NULL DEFAULT 'N',
+    PRIMARY KEY (ano, renavam),
+    CONSTRAINT fk_renavam FOREIGN KEY (renavam)
+        REFERENCES veiculo,
+    CONSTRAINT chk_pago_valido
+        CHECK ( pago IN ('S', 'N') )
+);
 
--- TODO TRANSFERENCIA
+CREATE TABLE tranferencia
+(
+  idHistorico SERIAL PRIMARY KEY,
+  renavam char(13) NOT NULL,
+  idProprietario int NOT NULL,
+  dataCompra date NOT NULL,
+  dataVenda date,
+  CONSTRAINT fk_renavam FOREIGN KEY (renavam)
+    REFERENCES veiculo,
+  CONSTRAINT fk_proprietario FOREIGN KEY (idProprietario)
+    REFERENCES condutor
+);
 
 
