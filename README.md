@@ -7,8 +7,8 @@
 4. condutor __OK__
 5. marca __OK__
 6. tipo __OK__
-7. modelo 
-8. infracao __OK__ (falta popular)
+7. modelo __OK__
+8. infracao __OK__
 9. especie __OK__
 10. categoria_veiculo __OK__
 11. veiculo
@@ -19,4 +19,5 @@
 ## TASKS
 
 * Povoar listagem de infração retirando dados do código nacional de trânsito
+* Trigger para o renavam. Create Sequence.
 
