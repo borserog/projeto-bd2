@@ -11,13 +11,13 @@
 8. infracao __OK__
 9. especie __OK__
 10. categoria_veiculo __OK__
-11. veiculo
-12. multa
-13. licenciamento
-14. transferencia
+11. veiculo __OK__
+12. multa __OK__
+13. licenciamento __OK__
+14. transferencia __OK__
 
 ## TASKS
 
-* Povoar listagem de infração retirando dados do código nacional de trânsito
-* Trigger para o renavam. Create Sequence.
+* Povoar listagem de infração retirando dados do código nacional de trânsito __OK__
+* Trigger para o renavam. Create Sequence. __OK__
 
