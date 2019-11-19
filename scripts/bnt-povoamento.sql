@@ -1019,3 +1019,38 @@ INSERT INTO infracao (descricao, pontos, valor) VALUES ('EMBARCAR PP EM VEIC(OU 
 INSERT INTO infracao (descricao, pontos, valor) VALUES ('NAO ESCLAREC.O SUFIC.EM SIT.DE EMERG OU ACIDENTE', 0, 328.27);
 INSERT INTO infracao (descricao, pontos, valor) VALUES ('NAO ESCLAREC.O SUFIC.EM SIT.DE EMERG.QDO SOLICIT.P/AUTORID', 0, 328.27);
 INSERT INTO infracao (descricao, pontos, valor) VALUES ('NAO ESCLAREC.O SUFIC.EM CASO DE ACID.QDO SOLICIT.P/AUTORID', 0, 328.27);
+
+/*************************************************************************************************
+*
+*  #9 especie
+*
+************************************************************************************************/
+
+insert into especie (descricao) values ('Veículo de Passageiros');
+insert into especie (descricao) values ('Veículo de Carga');
+insert into especie (descricao) values ('Veículo Misto');
+insert into especie (descricao) values ('Veículo de Competição');
+insert into especie (descricao) values ('Veículo de Tração');
+insert into especie (descricao) values ('Veículo Especial');
+insert into especie (descricao) values ('Veículo de Coleção');
+
+/*************************************************************************************************
+*
+*  #10 categoria_veiculo
+*
+************************************************************************************************/
+
+insert into categoria_veiculo (descricao, idEspecie) values ('Particular', 1);
+insert into categoria_veiculo (descricao, idEspecie) values ('Oficial', 6);
+insert into categoria_veiculo (descricao, idEspecie) values ('Aprendizagem', 1);
+insert into categoria_veiculo (descricao, idEspecie) values ('Aluguel', 1);
+insert into categoria_veiculo (descricao, idEspecie) values ('Representação Diplomática', 5);
+
+
+/*************************************************************************************************
+*
+*  #11 veiculo
+*
+************************************************************************************************/
+
+delete from veiculo;

@@ -105,7 +105,7 @@ CREATE TABLE veiculo
   dataCompra date NOT NULL,
   dataAquisicao date NOT NULL,
   valor numeric(7, 2) NOT NULL,
-  situacao char(1) NOT NULL,
+  situacao char(1) DEFAULT 'R',
   CONSTRAINT fk_categoria_veiculo FOREIGN KEY (idCategoria)
 		REFERENCES categoria_veiculo,
   CONSTRAINT fk_condutor FOREIGN KEY (idProprietario)
@@ -114,7 +114,8 @@ CREATE TABLE veiculo
 		REFERENCES modelo,
   CONSTRAINT fk_cidade FOREIGN KEY (idCidade)
 		REFERENCES cidade,
-  CONSTRAINT chk_situacao_valida CHECK (situacao IN ('R', 'I', 'B'))
+  CONSTRAINT chk_situacao_valida CHECK (situacao IN ('R', 'I', 'B')),
+  CONSTRAINT chk_placa_valida CHECK ( placa !~ '[A-Z]{3}[-][0-9]{4}')
 );
 
 CREATE TABLE multa
