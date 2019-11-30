@@ -1,4 +1,4 @@
-CREATE EXTENSION plpythonu
+CREATE EXTENSION plpythonu;
 
 CREATE OR REPLACE FUNCTION random_plate() RETURNS varchar
 AS $$

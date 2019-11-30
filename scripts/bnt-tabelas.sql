@@ -114,8 +114,7 @@ CREATE TABLE veiculo
 		REFERENCES modelo,
   CONSTRAINT fk_cidade FOREIGN KEY (idCidade)
 		REFERENCES cidade,
-  CONSTRAINT chk_situacao_valida CHECK (situacao IN ('R', 'I', 'B')),
-  CONSTRAINT chk_placa_valida CHECK ( placa !~ '[A-Z]{3}[-][0-9]{4}')
+  CONSTRAINT chk_situacao_valida CHECK (situacao IN ('R', 'I', 'B'))
 );
 
 CREATE TABLE multa
