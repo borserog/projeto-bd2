@@ -23,7 +23,7 @@ BEGIN
 	FOR num IN 1..10 LOOP
 		res := res + base[num]*renavam[num];
 	END LOOP;
-	res := res%11;
+	res := res%10;
 
 	renavam := array_append(renavam, res);
 	renavam_string := array_to_string(renavam, '');
