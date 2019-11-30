@@ -4,7 +4,7 @@
 
 CREATE OR REPLACE VIEW PONTOSCONDUTOR AS (
     SELECT date_part('year', multa.datainfracao) AS ANOINFRACAO, condutor.idcadastro, condutor.nome,
-           condutor.idcategoriacnh, COUNT(infracao.pontos) AS TOTALPONTOS
+           condutor.idcategoriacnh, SUM(infracao.pontos) AS TOTALPONTOS
     FROM condutor
     INNER JOIN multa ON condutor.idcadastro = multa.idcondutor
     INNER JOIN infracao ON multa.idinfracao = infracao.idinfracao
