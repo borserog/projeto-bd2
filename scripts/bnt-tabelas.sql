@@ -3,26 +3,26 @@ SET datestyle TO dmy;
 
 CREATE TABLE estado
 (
-    uf char(2) NOT NULL,
-    nome varchar(40) NOT NULL,
-    PRIMARY KEY (uf)
+  uf char(2) NOT NULL,
+  nome varchar(40) NOT NULL,
+  PRIMARY KEY (uf)
 );
 
 CREATE TABLE cidade
 (
-    idCidade int NOT NULL,
-    nome varchar(50) NOT NULL,
-    uf char(2) NOT NULL,
-    PRIMARY KEY (idCidade),
-    CONSTRAINT fk_estado FOREIGN KEY (uf)
-        REFERENCES estado (uf) MATCH SIMPLE
+  idCidade int NOT NULL,
+  nome varchar(50) NOT NULL,
+  uf char(2) NOT NULL,
+  PRIMARY KEY (idCidade),
+  CONSTRAINT fk_estado FOREIGN KEY (uf)
+      REFERENCES estado (uf) MATCH SIMPLE
 );
 
 CREATE TABLE categoria_cnh
 (
-    idCategoriaCNH char(3) NOT NULL,
-    descricao text NOT NULL,
-    PRIMARY KEY (idCategoriaCNH)
+  idCategoriaCNH char(3) NOT NULL,
+  descricao text NOT NULL,
+  PRIMARY KEY (idCategoriaCNH)
 );
 
 CREATE TABLE condutor
@@ -54,20 +54,20 @@ CREATE TABLE marca
 
 CREATE TABLE tipo
 (
-    idTipo SERIAL PRIMARY KEY,
-    descricao varchar(30)
+  idTipo SERIAL PRIMARY KEY,
+  descricao varchar(30)
 );
 
 CREATE TABLE modelo
 (
-    idModelo SERIAL PRIMARY KEY,
-    denominacao varchar(40),
-    idMarca int NOT NULL,
-    idTipo int NOT NULL,
-    CONSTRAINT fk_marca FOREIGN KEY (idMarca)
-        REFERENCES marca MATCH SIMPLE,
-    CONSTRAINT fk_tipo FOREIGN KEY (idTipo)
-        REFERENCES tipo MATCH SIMPLE
+  idModelo SERIAL PRIMARY KEY,
+  denominacao varchar(40),
+  idMarca int NOT NULL,
+  idTipo int NOT NULL,
+  CONSTRAINT fk_marca FOREIGN KEY (idMarca)
+      REFERENCES marca MATCH SIMPLE,
+  CONSTRAINT fk_tipo FOREIGN KEY (idTipo)
+      REFERENCES tipo MATCH SIMPLE
 );
 
 CREATE TABLE infracao
@@ -105,16 +105,16 @@ CREATE TABLE veiculo
   dataCompra date NOT NULL,
   dataAquisicao date NOT NULL,
   valor numeric(7, 2) NOT NULL,
-  situacao char(1) NOT NULL,
-    CONSTRAINT fk_categoria_veiculo FOREIGN KEY (idCategoria)
+  situacao char(1) DEFAULT 'R',
+  CONSTRAINT fk_categoria_veiculo FOREIGN KEY (idCategoria)
 		REFERENCES categoria_veiculo,
-    CONSTRAINT fk_condutor FOREIGN KEY (idProprietario)
+  CONSTRAINT fk_condutor FOREIGN KEY (idProprietario)
 		REFERENCES condutor,
-    CONSTRAINT fk_modelo FOREIGN KEY (idModelo)
+  CONSTRAINT fk_modelo FOREIGN KEY (idModelo)
 		REFERENCES modelo,
-    CONSTRAINT fk_cidade FOREIGN KEY (idCidade)
+  CONSTRAINT fk_cidade FOREIGN KEY (idCidade)
 		REFERENCES cidade,
-    CONSTRAINT chk_situacao_valida CHECK (situacao IN ('R', 'I', 'B'))
+  CONSTRAINT chk_situacao_valida CHECK (situacao IN ('R', 'I', 'B'))
 );
 
 CREATE TABLE multa
@@ -142,15 +142,15 @@ CREATE TABLE multa
 
 CREATE TABLE licenciamento
 (
-    ano int NOT NULL,
-    renavam char(13) NOT NULL,
-    dataVenc date,
-    pago char(1) NOT NULL DEFAULT 'N',
-    PRIMARY KEY (ano, renavam),
-    CONSTRAINT fk_renavam FOREIGN KEY (renavam)
-        REFERENCES veiculo,
-    CONSTRAINT chk_pago_valido
-        CHECK ( pago IN ('S', 'N') )
+  ano int NOT NULL,
+  renavam char(13) NOT NULL,
+  dataVenc date,
+  pago char(1) NOT NULL DEFAULT 'N',
+  PRIMARY KEY (ano, renavam),
+  CONSTRAINT fk_renavam FOREIGN KEY (renavam)
+      REFERENCES veiculo,
+  CONSTRAINT chk_pago_valido
+      CHECK ( pago IN ('S', 'N') )
 );
 
 CREATE TABLE tranferencia
@@ -165,5 +165,3 @@ CREATE TABLE tranferencia
   CONSTRAINT fk_proprietario FOREIGN KEY (idProprietario)
     REFERENCES condutor
 );
-
-
