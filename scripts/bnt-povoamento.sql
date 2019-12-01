@@ -970,5 +970,3 @@ insert into veiculo (placa, ano, idcategoria, idproprietario, idmodelo, idcidade
 insert into veiculo (placa, ano, idcategoria, idproprietario, idmodelo, idcidade, datacompra, dataaquisicao, valor) values (gerar_placa(), 2002, 1, 66, 2, 54, '18/5/1994', '18/5/1994', 52372.21);
 insert into veiculo (placa, ano, idcategoria, idproprietario, idmodelo, idcidade, datacompra, dataaquisicao, valor) values (gerar_placa(), 1995, 1, 43, 13, 34, '30/3/2001', '30/3/2001', 53058.45);
 insert into veiculo (placa, ano, idcategoria, idproprietario, idmodelo, idcidade, datacompra, dataaquisicao, valor) values (gerar_placa(), 2012, 1, 79, 7, 66, '7/10/1997', '7/10/1997', 40342.62);
-
-

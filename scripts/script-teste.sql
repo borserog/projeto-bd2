@@ -9,4 +9,8 @@ update veiculo set idProprietario = 80, dataAquisicao = CURRENT_DATE where placa
 select * from historico_renavam('10000006162');
 
 
-insert into multa (renavam, idinfracao, idcondutor, datainfracao, datavencimento, datapagamento, valor, juros, valorfinal, pago);
+insert into multa (renavam, idinfracao, idcondutor, datainfracao)
+values('10000006849', 33, 14, current_date);
+
+insert into multa (renavam, idinfracao, datainfracao)
+values('10000006916', 33, current_date);

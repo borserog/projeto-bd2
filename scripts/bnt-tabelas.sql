@@ -140,6 +140,8 @@ CREATE TABLE multa
     CHECK (pago IN ('S', 'N'))
 );
 
+
+
 CREATE TABLE licenciamento
 (
   ano int NOT NULL,
@@ -153,7 +155,7 @@ CREATE TABLE licenciamento
       CHECK ( pago IN ('S', 'N') )
 );
 
-CREATE TABLE tranferencia
+CREATE TABLE transferencia
 (
   idHistorico SERIAL PRIMARY KEY,
   renavam char(13) NOT NULL,

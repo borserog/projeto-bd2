@@ -2,7 +2,7 @@
 CREATE OR REPLACE FUNCTION transf_propriedade() RETURNS TRIGGER
 AS $$
 BEGIN
-	INSERT INTO tranferencia (renavam,idProprietario,dataCompra,dataVenda) 
+	INSERT INTO transferencia (renavam,idProprietario,dataCompra,dataVenda)
 	VALUES(OLD.renavam, OLD.idProprietario, OLD.dataCompra, CURRENT_DATE);
 	RETURN OLD;
 END $$

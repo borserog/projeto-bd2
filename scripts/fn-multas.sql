@@ -17,9 +17,9 @@ END; $$
 LANGUAGE plpgsql;
 
 CREATE TRIGGER seta_condutor
-BEFORE INSERT ON multa
+AFTER INSERT ON multa
 FOR EACH ROW
-EXECUTE PROCEDURE checa_responsavel();
+EXECUTE PROCEDURE seta_responsavel();
 
 ------------------------------------------------------------------------------------------------
 CREATE OR REPLACE FUNCTION is_dia_util(data_ date)
@@ -116,7 +116,7 @@ END; $$
 LANGUAGE plpgsql;
 
 CREATE TRIGGER atualiza_valor_final
-BEFORE INSERT OR UPDATE ON multa
+AFTER INSERT OR UPDATE ON multa
 FOR EACH ROW
 EXECUTE PROCEDURE atualiza_valor_final();
 

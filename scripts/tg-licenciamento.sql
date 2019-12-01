@@ -11,25 +11,25 @@ DECLARE
 BEGIN
   CASE placa_array[6]
     WHEN '1' THEN
-      data_venc_licenc := '03-28-' || current_year;
+      data_venc_licenc := '28-03-' || current_year;
     WHEN '2' THEN
-      data_venc_licenc := '04-30-' || current_year;
+      data_venc_licenc := '30-04-' || current_year;
     WHEN '3' THEN
-      data_venc_licenc := '05-30-' || current_year;
+      data_venc_licenc := '30-05-' || current_year;
     WHEN '4' THEN
-      data_venc_licenc := '06-29-' || current_year;
+      data_venc_licenc := '29-06-' || current_year;
     WHEN '5' THEN
-      data_venc_licenc := '07-31-' || current_year;
+      data_venc_licenc := '31-07-' || current_year;
     WHEN '6' THEN
-      data_venc_licenc := '08-31-' || current_year;
+      data_venc_licenc := '31-08-' || current_year;
     WHEN '7' THEN
-      data_venc_licenc := '09-28-' || current_year;
+      data_venc_licenc := '28-09-' || current_year;
     WHEN '8' THEN
-      data_venc_licenc := '10-31-' || current_year;
+      data_venc_licenc := '31-10-' || current_year;
     WHEN '9' THEN
-      data_venc_licenc := '11-30-' || current_year;
+      data_venc_licenc := '30-11-' || current_year;
     WHEN '0' THEN
-      data_venc_licenc := '12-30-' || current_year;
+      data_venc_licenc := '30-12-' || current_year;
   END CASE;
 
   RETURN data_venc_licenc::date;
@@ -56,7 +56,7 @@ END $$;
 CREATE TRIGGER tg_set_licenciamento
 AFTER INSERT ON veiculo
 FOR EACH ROW
-EXECUTE PROCEDURE set_licenciamento()
+EXECUTE PROCEDURE set_licenciamento();
 
 -- ======================================== --
 
@@ -73,7 +73,7 @@ LANGUAGE plpgsql
 AS $$
 DECLARE
   current_year int := date_part('year', CURRENT_DATE);
-  cursorVeiculos CURSOR FOR SELECT renavam, placa FROM veiculos;
+  cursorVeiculos CURSOR FOR SELECT renavam, placa FROM veiculo;
 BEGIN
   FOR linha IN cursorVeiculos LOOP
     INSERT INTO licenciamento (ano, renavam, datavenc)
