@@ -7,7 +7,7 @@ RETURNS varchar(7) AS $$
         rand_int int;
         DIGIT_LENGTH integer := 4;
         CHAR_LENGTH integer := 3;
-    begin
+    BEGIN
 
             FOR char_element in 1..CHAR_LENGTH LOOP
                 rand_int := random()*25::int;
@@ -20,5 +20,5 @@ RETURNS varchar(7) AS $$
             END LOOP;
 
             RETURN array_to_string(result, '');
-    end;
+    END;
 $$ LANGUAGE plpgsql;

@@ -17,4 +17,4 @@ FOR EACH ROW
 EXECUTE PROCEDURE transf_propriedade();
 
 --UPDATE DE TESTE
-update veiculo set idProprietario = 60, dataAquisicao = CURRENT_DATE where placa = 'WFY4564';
+-- update veiculo set idProprietario = 60, dataAquisicao = CURRENT_DATE where placa = 'STV6224';

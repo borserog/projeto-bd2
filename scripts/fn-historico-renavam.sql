@@ -11,10 +11,10 @@ BEGIN
 		JOIN marca ON mode.idMarca = marca.idMarca
 		JOIN condutor con ON trans.idProprietario = con.idCadastro
 		WHERE trans.renavam = rena
-		ORDER BY dataVenda ASC;
+		ORDER BY dataVenda;
 	END; $$
 LANGUAGE plpgsql;
-select * from veiculo
+
 
 --TESTE
-select * from historico_renavam('10000000064');
+-- select * from historico_renavam('10000006162');
