@@ -7,3 +7,6 @@ update veiculo set idProprietario = 80, dataAquisicao = CURRENT_DATE where placa
 
 -- 7.1 FUNÇÃO QUE RETORNA TABELA
 select * from historico_renavam('10000006162');
+
+
+insert into multa (renavam, idinfracao, idcondutor, datainfracao, datavencimento, datapagamento, valor, juros, valorfinal, pago);

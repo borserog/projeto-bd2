@@ -32,7 +32,7 @@ BEGIN
 	ELSE
 		RETURN TRUE;
 	END IF;
-END; $$
+END; $$;
 
 CREATE OR REPLACE FUNCTION seta_data_vencimento()
 RETURNS TRIGGER
@@ -72,7 +72,7 @@ BEFORE INSERT ON multa
 FOR EACH ROW
 EXECUTE PROCEDURE seta_valor();
 ------------------------------------------------------------------------------------------------
-CREATE OR REPLACE FUNCTION CONFERE_JUROS()
+CREATE OR REPLACE FUNCTION confere_juros()
 RETURNS TRIGGER
 AS $$
 DECLARE
@@ -115,7 +115,7 @@ BEGIN
 END; $$
 LANGUAGE plpgsql;
 
-CREATE TRIGGER atualiza_valor_finaL
+CREATE TRIGGER atualiza_valor_final
 BEFORE INSERT OR UPDATE ON multa
 FOR EACH ROW
 EXECUTE PROCEDURE atualiza_valor_final();
