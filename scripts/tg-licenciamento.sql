@@ -77,6 +77,6 @@ DECLARE
 BEGIN
   FOR linha IN cursorVeiculos LOOP
     INSERT INTO licenciamento (ano, renavam, datavenc)
-    VALUES (current_year, linha.renavam, set_data_venc_licenc(linha.placa))
+    VALUES (current_year, linha.renavam, set_data_venc_licenc(linha.placa));
   END LOOP;
 END $$;

@@ -28,8 +28,6 @@ CREATE OR REPLACE VIEW VEICULOPROPRIETARIO AS (
     INNER JOIN estado on cidade.uf = estado.uf
 );
 
-select * from VEICULOPROPRIETARIO;
-
 --
 -- Visão 3: ‘tabela’ que apresente o número de infrações e valores em multas registrados por ano e mês.
 

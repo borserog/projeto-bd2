@@ -145,7 +145,7 @@ INSERT INTO categoria_cnh (idCategoriaCNH, descricao) values ('AE', '-- sem desc
 *  #4 condutor
 *
 ************************************************************************************************/
-
+set datestyle to dmy;
 insert into condutor (cpf, nome, dataNasc, idCategoriaCNH, endereco, bairro, idCidade, situacaoCNH) values (88336806055, 'Barney Scartifield', '9/8/1983', 'ACC', '226 Darwin Road', 'Brisamar', 65, 'S');
 insert into condutor (cpf, nome, dataNasc, idCategoriaCNH, endereco, bairro, idCidade, situacaoCNH) values (62879190798, 'Brandi Girardini', '15/3/1957', 'A', '68 Lukken Park', 'Água Fria', 51, 'S');
 insert into condutor (cpf, nome, dataNasc, idCategoriaCNH, endereco, bairro, idCidade, situacaoCNH) values (91692630512, 'Perry Willcock', '20/4/1991', 'B', '80 Golf View Street', 'Gramame', 5, 'S');

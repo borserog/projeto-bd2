@@ -9,17 +9,20 @@ BEGIN
 		
 	ELSIF (TG_OP='UPDATE' AND OLD.idcondutor <> NEW.idcondutor) THEN 
 		IF (old.datapagamento is not null) THEN
+		    RETURN OLD.idCondutor;
 			RAISE EXCEPTION 'OPERACAO INVALIDA, MULTA JÁ PAGA';
-			RETURN OLD.idCondutor;
 		END IF;
 	END IF;
+
+	RETURN NEW;
 END; $$
 LANGUAGE plpgsql;
 
 CREATE TRIGGER seta_condutor
-AFTER INSERT ON multa
+BEFORE INSERT OR UPDATE ON multa
 FOR EACH ROW
 EXECUTE PROCEDURE seta_responsavel();
+
 
 ------------------------------------------------------------------------------------------------
 CREATE OR REPLACE FUNCTION is_dia_util(data_ date)
@@ -76,17 +79,18 @@ CREATE OR REPLACE FUNCTION confere_juros()
 RETURNS TRIGGER
 AS $$
 DECLARE
-	DIFERENCA_DIAS integer := extract(days from age(NEW.DATAPAGAMENTO, OLD.DATAVENCIMENTO));
+	DIFERENCA_DIAS integer := date_part('day', NEW.DATAPAGAMENTO::timestamp - OLD.DATAVENCIMENTO::timestamp);
 BEGIN
 	IF (DIFERENCA_DIAS > 0) THEN
 		NEW.juros = 0.01*DIFERENCA_DIAS;
+		NEW.valorfinal = NEW.valor + (NEW.juros * NEW.valor);
 	END IF;
 	RETURN NEW;
 END; $$
 LANGUAGE plpgsql;
 
 CREATE TRIGGER confere_juros
-BEFORE UPDATE ON multa
+AFTER UPDATE ON multa
 FOR EACH ROW
 EXECUTE PROCEDURE confere_juros();
 -------------------------------------------------------------------------------------------
@@ -110,7 +114,7 @@ CREATE OR REPLACE FUNCTION atualiza_valor_final()
 RETURNS TRIGGER
 AS $$
 BEGIN
-	NEW.valorFinal := NEW.valor + NEW.juros;
+	NEW.valorFinal := NEW.valor + (NEW.juros * NEW.valor);
 	RETURN NEW;
 END; $$
 LANGUAGE plpgsql;
@@ -119,4 +123,6 @@ CREATE TRIGGER atualiza_valor_final
 AFTER INSERT OR UPDATE ON multa
 FOR EACH ROW
 EXECUTE PROCEDURE atualiza_valor_final();
+
+drop trigger atualiza_valor_final on multa;
 
