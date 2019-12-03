@@ -1,0 +1,12 @@
+create role web_anon nologin;
+
+grant usage on schema public to web_anon;
+GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA public TO web_anon;
+
+create role authenticator noinherit login password 'mysecretpassword';
+alter role authenticator login password 'mysecretpassword';
+grant web_anon to authenticator;
+
+drop role authenticator;
+
+select * from pg_catalog.pg_roles
