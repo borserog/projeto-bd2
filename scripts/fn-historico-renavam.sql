@@ -1,4 +1,4 @@
-CREATE OR REPLACE FUNCTION historico_renavam(rena CHAR) 
+CREATE OR REPLACE FUNCTION historico_renavam(rena varchar)
 RETURNS TABLE(renavam CHAR, modelo VARCHAR, marca VARCHAR, 
 			  ano INTEGER, nome_prop VARCHAR, dataCompra DATE, dataVenda DATE)
 AS $$
@@ -15,6 +15,5 @@ BEGIN
 	END; $$
 LANGUAGE plpgsql;
 
-
 --TESTE
--- select * from historico_renavam('10000006162');
+select * from historico_renavam('10000000144');
